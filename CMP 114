@@ -1,0 +1,94 @@
+class Math:
+    def add(self, x, y):
+        return x + y
+
+    def subtract(self, x, y):
+        return x - y
+
+    def divide(self, x, y):
+        return x / y
+
+    def multiply(self, x, y):
+        return x * y
+
+    def power(self, x, y):
+        return x ** y
+
+class Physics:
+    def speed(self, distance, time):
+        return distance / time
+
+    def momentum(self, mass, velocity):
+        return mass * velocity
+
+    def force(self, mass, acceleration):
+        return mass * acceleration
+
+    def impulse(self, force, time):
+        return force * time
+
+    def workdone(self, force, distance):
+        return force * distance
+
+# Prompt user for which class to use
+class_name = input("Do you want to calculate Math or Physics? ")
+
+# Instantiate appropriate class based on user input
+if class_name.lower() == "math":
+    calculator = Math()
+elif class_name.lower() == "physics":
+    calculator = Physics()
+else:
+    print("Invalid input. Please try again.")
+    exit()
+
+# Prompt user for which operation to perform
+operation = input("Which operation do you wish to perform? ")
+
+# Call the appropriate method on the selected class based on user input
+if operation.lower() == "add":
+    x = int(input("Enter the first number: "))
+    y = int(input("Enter the second number: "))
+    result = calculator.add(x, y)
+elif operation.lower() == "subtract":
+    x = int(input("Enter the first number: "))
+    y = int(input("Enter the second number: "))
+    result = calculator.subtract(x, y)
+elif operation.lower() == "divide":
+    x = int(input("Enter the numerator: "))
+    y = int(input("Enter the denominator: "))
+    result = calculator.divide(x, y)
+elif operation.lower() == "multiply":
+    x = int(input("Enter the first number: "))
+    y = int(input("Enter the second number: "))
+    result = calculator.multiply(x, y)
+elif operation.lower() == "power":
+    x = int(input("Enter the base: "))
+    y = int(input("Enter the exponent: "))
+    result = calculator.power(x, y)
+elif operation.lower() == "speed":
+    distance = int(input("Enter the distance: "))
+    time = int(input("Enter the time: "))
+    result = calculator.speed(distance, time)
+elif operation.lower() == "momentum":
+    velocity = int(input("Enter the mass: "))
+    time = int(input("Enter the velocity: "))
+    result = calculator.momentum(velocity, time)
+elif operation.lower() == "force":
+    mass = int(input("Enter the mass: "))
+    acceleration = int(input("Enter the acceleration: "))
+    result = calculator.force(mass, acceleration)
+elif operation.lower() == "impulse":
+    force = int(input("enter the force: "))
+    time = int(input("enter the time: "))
+    result = calculator.impulse(force, time)
+elif operation.lower() == "workdone":
+    force = int(input("enter the force: "))
+    distance = int(input("Enter the distance: "))
+    result = calculator.workdone(force, distance)
+else:
+    print("Invalid input. Please try again.")
+    exit()
+
+# Print the result of the selected operation
+print("Result: ", result)
